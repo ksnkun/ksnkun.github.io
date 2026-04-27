@@ -21,15 +21,18 @@ export const socialLinks = [
     name: "Email",
     url: `mailto:${siteConfig.email}`,
     icon: "/mail.svg",
+    alt: "Email Icon",
   },
   {
     name: "Telegram",
     url: siteConfig.telegram,
     icon: "/telegram.svg",
+    alt: "Telegram Icon",
   },
   {
     name: "VK",
     url: siteConfig.vk,
     icon: "/vk.svg",
+    alt: "VK Icon",
   },
 ];

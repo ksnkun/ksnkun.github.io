@@ -1,17 +1,43 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Contacts from '../components/Contacts.astro';
+import { siteConfig } from '../config/site';
 
+const currentDate = new Date().getFullYear();
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={siteConfig.title} description={siteConfig.description}>
+  <Header />
+  <Hero />
+  <Portfolio />
+  <Contacts />
+  
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; {currentDate} {siteConfig.author}. All rights reserved.</p>
+      <p class="footer-note">Built with Astro + Github Pages</p>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .footer {
+    background-color: #2a2e15;
+    color: #e0e0e0;
+    padding: var(--space-2xl) 0;
+    text-align: center;
+    border-top: 1px solid rgba(212, 206, 148, 0.2);
+  }
+
+  .footer p {
+    margin: var(--space-md) 0;
+    font-size: var(--font-size-sm);
+  }
+
+  .footer-note {
+    color: var(--color-primary);
+  }
+</style>

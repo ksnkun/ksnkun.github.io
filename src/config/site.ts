@@ -1,5 +1,5 @@
 export const siteConfig = {
-  title: "Ксения Кун - ",
+  title: "Привет! Я Ксения Кун",
   description: "Портфолио и блог Ксении Кун",
   author: "Ксения Кун",
   email: "ksenia.kun02@gmail.com",

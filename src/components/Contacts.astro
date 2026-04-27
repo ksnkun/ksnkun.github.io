@@ -14,17 +14,10 @@ import { siteConfig, socialLinks } from '../config/site';
       <div class="contacts-grid">
         {socialLinks.map((link) => (
           <a href={link.url} target="_blank" rel="noopener noreferrer" class="contact-link">
-            <img src={link.icon} width=24/>
+            <img src={link.icon} alt={link.alt} width=24 loading="lazy" />
             <span class="contact-name">{link.name}</span>
           </a>
         ))}
-      </div>
-
-      <div class="email-section">
-        <p>{siteConfig.mailto}</p>
-        <a href={`mailto:${siteConfig.email}`} class="btn btn-primary">
-          {siteConfig.mailtoButton}
-        </a>
       </div>
     </div>
   </div>

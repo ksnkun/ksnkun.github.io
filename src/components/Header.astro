@@ -1,0 +1,100 @@
+---
+import { siteConfig } from '../config/site.ts';
+
+const navLinks = [
+  { label: 'Обо мне', href: '#about' },
+  { label: 'Портфолио', href: '#portfolio' },
+  { label: 'Контакты', href: '#contacts' },
+];
+---
+
+<header>
+  <div class="container">
+    <div class="header-content">
+      <a href="#" class="logo">
+        <h3 style="margin: 0; color: var(--color-dark);">{siteConfig.author}</h3>
+      </a>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        {navLinks.map(link => {
+            <span>
+                <a href={link.href}>{link.label}</a>
+            </span>
+        })}
+      </button>
+
+      <nav>
+        <ul class="nav-menu">
+          {navLinks.map(link => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    background-color: var(--color-accent);
+    padding: var(--space-lg) 0;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    text-decoration: none;
+    color: var(--color-dark);
+  }
+
+  nav {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: var(--space-2xl);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-menu a {
+    color: var(--color-dark);
+    font-weight: var(--font-weight-semibold);
+    transition: color var(--transition-base);
+  }
+
+  .nav-menu a:hover {
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background-color: var(--color-accent);
+      padding: var(--space-lg);
+      gap: var(--space-md);
+      display: none;
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-menu.active {
+      display: flex;
+    }
+  }
+</style>

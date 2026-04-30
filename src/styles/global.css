@@ -4,14 +4,14 @@
 
 :root {
   /* Color Palette */
-  --color-primary: #d4ce94;
-  --color-dark: #39411a;
-  --color-accent: #fbf7ae;
-  --color-accent-dark: #9f3645;
+  --color-dark: #44040f;
+  --color-primary:#fbde9c;
+  --color-accent-dark: #8b6f4f;
+  --color-accent: #fdefd3;
 
   /* Neutral Colors */
-  --color-bg: #ffffff;
-  --color-text: #1a1a1a;
+  --color-bg: #fff;
+  --color-text: var(--color-primary);
   --color-text-light: #666666;
   --color-border: #e0e0e0;
 
@@ -135,7 +135,7 @@ p {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-dark);
   text-decoration: none;
   transition: color var(--transition-base);
 }
@@ -187,7 +187,7 @@ a:hover {
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-2xl);
   text-align: center;
-  color: var(--color-dark);
+  color: var(--color-primary);
 }
 
 @media (max-width: var(--breakpoint-md)) {
@@ -202,7 +202,7 @@ a:hover {
 }
 
 .text-dark {
-  color: var(--color-dark);
+  color: var(--color-primary);
 }
 
 .text-light {
@@ -210,16 +210,16 @@ a:hover {
 }
 
 .bg-primary {
-  background-color: var(--color-primary);
+  background-color: var(--color-dark);
 }
 
 .bg-dark {
-  background-color: var(--color-dark);
+  background-color: var(--color-primary);
   color: white;
 }
 
 .bg-accent {
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-dark);
 }
 
 /* ============================================
@@ -246,31 +246,31 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background-color: var(--color-accent);
+  color: var(--color-accent-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
 
 .btn-dark {
-  background-color: var(--color-dark);
-  color: var(--color-accent);
+  background-color: var(--color-primary);
+  color: var(--color-accent-dark);
 }
 
 .btn-dark:hover {
-  background-color: var(--color-accent-dark);
+  background-color: var(--color-accent);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary {
-  background-color: var(--color-accent);
-  color: var(--color-dark);
-  border: 2px solid var(--color-dark);
+  background-color: var(--color-accent-dark);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-dark);
-  color: var(--color-accent);
+  background-color: var(--color-primary);
+  color: var(--color-accent-dark);
 }
 
 /* ============================================
@@ -328,7 +328,7 @@ a:hover {
 .mobile-menu-toggle span {
   width: 1.5rem;
   height: 0.25rem;
-  background-color: var(--color-dark);
+  background-color: var(--color-primary);
   transition: all var(--transition-base);
 }
 
@@ -355,7 +355,7 @@ a:hover {
    ============================================ */
 
 header {
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-dark);
   padding: var(--space-lg) 0;
   box-shadow: var(--shadow-sm);
   position: sticky;
@@ -367,41 +367,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.nav-menu {
-  display: flex;
-  gap: var(--space-2xl);
-  list-style: none;
-}
-
-.nav-menu a {
-  color: var(--color-dark);
-  font-weight: var(--font-weight-semibold);
-  transition: color var(--transition-base);
-}
-
-.nav-menu a:hover {
-  color: var(--color-primary);
-}
-
-@media (max-width: var(--breakpoint-md)) {
-  .nav-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    background-color: var(--color-accent);
-    padding: var(--space-lg);
-    gap: var(--space-md);
-    display: none;
-    box-shadow: var(--shadow-md);
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
 }
 
 /* ============================================

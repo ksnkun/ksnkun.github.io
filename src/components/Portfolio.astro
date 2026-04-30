@@ -1,5 +1,5 @@
 ---
-import projects from '../data/projects.json';
+import projects from "../data/projects.json";
 
 interface Project {
   id: string;
@@ -16,31 +16,40 @@ const allProjects: Project[] = projects;
 <section id="portfolio" class="portfolio">
   <div class="container">
     <h2 class="section-title">My Portfolio</h2>
-    
+
     <div class="projects-grid">
-      {allProjects.map((project) => (
-        <div class="project-card" key={project.id}>
-          <div class="project-image">
-            <img src={project.image} alt={project.title} />
-            <div class="project-overlay">
-              <a href={project.link} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                View Project
-              </a>
+      {
+        allProjects.map((project) => (
+          <div class="project-card" key={project.id}>
+            <div class="project-image">
+              <img src={project.image} alt={project.title} />
+              <div class="project-overlay">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary"
+                >
+                  View Project
+                </a>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3>{project.title}</h3>
+              <p class="project-description">{project.description}</p>
+
+              <div class="project-tags">
+                {project.tags.map((tag) => (
+                  <span class="tag" key={tag}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-          
-          <div class="project-content">
-            <h3>{project.title}</h3>
-            <p class="project-description">{project.description}</p>
-            
-            <div class="project-tags">
-              {project.tags.map((tag) => (
-                <span class="tag" key={tag}>{tag}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
@@ -48,7 +57,7 @@ const allProjects: Project[] = projects;
 <style>
   .portfolio {
     padding: var(--space-4xl) 0;
-    background-color: #f9f9f9;
+    background-color: var(--color-primary);
   }
 
   .section-title {
@@ -70,7 +79,9 @@ const allProjects: Project[] = projects;
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    transition:
+      transform var(--transition-base),
+      box-shadow var(--transition-base);
     display: flex;
     flex-direction: column;
   }
@@ -85,6 +96,7 @@ const allProjects: Project[] = projects;
     width: 100%;
     height: 200px;
     overflow: hidden;
+    color: var(--color-dark);
   }
 
   .project-image img {
@@ -104,7 +116,7 @@ const allProjects: Project[] = projects;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(57, 65, 26, 0.9);
+    background-color: var(--color-accent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,8 +157,8 @@ const allProjects: Project[] = projects;
   .tag {
     display: inline-block;
     padding: var(--space-xs) var(--space-md);
-    background-color: var(--color-accent);
-    color: var(--color-dark);
+    background-color: var(--color-accent-dark);
+    color: var(--color-primary);
     border-radius: var(--radius-full);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semibold);

@@ -31,7 +31,7 @@ import { siteConfig, socialLinks } from '../config/site';
   }
 
   .section-title {
-    color: var(--color-accent);
+    color: var(--color-primary);
     margin-bottom: var(--space-2xl);
   }
 
@@ -44,7 +44,7 @@ import { siteConfig, socialLinks } from '../config/site';
   .contacts-description {
     font-size: var(--font-size-lg);
     margin-bottom: var(--space-2xl);
-    color: #e0e0e0;
+    color: var(--color-primary);
     line-height: 1.8;
   }
 
@@ -61,15 +61,13 @@ import { siteConfig, socialLinks } from '../config/site';
     align-items: center;
     padding: var(--space-lg);
     border-radius: var(--radius-lg);
-    background-color: rgba(212, 206, 148, 0.1);
     text-decoration: none;
     transition: all var(--transition-base);
     border: 2px solid transparent;
+    background-color: var(--color-primary);
   }
 
   .contact-link:hover {
-    background-color: rgba(212, 206, 148, 0.2);
-    border-color: var(--color-primary);
     transform: translateY(-4px);
   }
 
@@ -79,17 +77,8 @@ import { siteConfig, socialLinks } from '../config/site';
   }
 
   .contact-name {
-    color: var(--color-accent);
+    color: var(--color-dark);
     font-weight: var(--font-weight-semibold);
-  }
-
-  .email-section {
-    margin-top: var(--space-2xl);
-  }
-
-  .email-section p {
-    margin-bottom: var(--space-md);
-    color: #e0e0e0;
   }
 
   @media (max-width: 768px) {

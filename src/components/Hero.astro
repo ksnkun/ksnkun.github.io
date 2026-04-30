@@ -1,5 +1,5 @@
 ---
-import { siteConfig } from '../config/site';
+import { siteConfig } from "../config/site";
 ---
 
 <section id="about" class="hero">
@@ -15,22 +15,10 @@ import { siteConfig } from '../config/site';
 
 <style>
   .hero {
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+    background-color: var(--color-dark);
     padding: calc(var(--space-4xl) * 1.5) 0;
     position: relative;
     overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    background-color: rgba(212, 206, 148, 0.1);
-    border-radius: 50%;
-    z-index: 0;
   }
 
   .hero-content {
@@ -40,13 +28,13 @@ import { siteConfig } from '../config/site';
 
   h1 {
     font-size: var(--font-size-5xl);
-    color: var(--color-dark);
+    color: var(--color-text);
     margin-bottom: var(--space-md);
   }
 
   .subtitle {
     font-size: var(--font-size-2xl);
-    color: var(--color-accent-dark);
+    color: var(--color-text);
     margin-bottom: var(--space-lg);
     font-weight: var(--font-weight-semibold);
   }
